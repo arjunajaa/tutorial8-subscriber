@@ -24,3 +24,10 @@ Subscriber mengalami penundaan dalam memproses data dari message broker, yang me
 
 Dalam kasus ini, jumlah maksimum pesan yang mengantre mencapai 11 saat menjalankan aplikasi publisher sebanyak 5 kali menggunakan perintah cargo run. Hal ini menandakan ketidakseimbangan antara kecepatan pengiriman pesan oleh publisher dan kecepatan pemrosesan pesan oleh subscriber.
 
+**Reflection and Running at least three subscribers**
+![terminal](image-2.png)
+![three](image-1.png)
+
+Dalam simulasi slow subscriber sebelumnya, kita melihat bahwa ketika menjalankan lebih dari satu subscriber, pengiriman data menjadi jauh lebih cepat. Dalam contoh ini, jumlah pesan yang masuk ke dalam queued messages pada message broker mencapai 8.
+
+Hal ini terjadi karena message broker mampu secara efisien mendistribusikan data yang diterima dari publisher ke berbagai subscriber yang terhubung. Tanpa perlu mengubah kode program, kita bisa mendapatkan hasil yang berbeda hanya dengan mengatur konfigurasi message broker atau jumlah subscriber yang aktif. Pendekatan ini dikenal sebagai pendekatan event-driven, di mana perilaku sistem ditentukan oleh cara komponen-komponen seperti publisher, subscriber, dan message broker berinteraksi satu sama lain.
